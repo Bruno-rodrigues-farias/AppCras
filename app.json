@@ -4,33 +4,57 @@
     "slug": "crasapp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/images/icon.png",
+    "permissions": [
+      "CAMERA",
+      "CAMERA_ROLL"
+    ],
+    "plugins": [
+      "expo-build-properties",
+      [
+        "expo-image-picker",
+        {
+          "photosPermission": "The app accesses your photos to let you share them with your friends.",
+          "cameraPermission": "The app accesses your camera to let you take photos for your profile."
+        }
+      ]
+    ],
     "scheme": "myapp",
     "userInterfaceStyle": "automatic",
     "splash": {
-      "image": "./assets/images/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#ffffff"
     },
     "ios": {
-      "supportsTablet": true
+      "supportsTablet": true,
+      "runtimeVersion": {
+        "policy": "appVersion"
+      }
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "permissions": [
+        "android.permission.RECORD_AUDIO"
+      ],
+      "package": "com.anonymous.crasapp",
+      "runtimeVersion": "1.0.0"
     },
     "web": {
       "bundler": "metro",
       "output": "static",
       "favicon": "./assets/images/favicon.png"
     },
-    "plugins": [
-      "expo-router"
-    ],
     "experiments": {
       "typedRoutes": true
+    },
+    "extra": {
+      "eas": {
+        "projectId": "804b7fd9-9ada-4528-bcc1-bf6b3b9fdeb9"
+      }
+    },
+    "updates": {
+      "url": "https://u.expo.dev/804b7fd9-9ada-4528-bcc1-bf6b3b9fdeb9"
     }
   }
 }
